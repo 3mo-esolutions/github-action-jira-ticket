@@ -26,7 +26,7 @@ runs:
             echo TICKET=${TICKET,,} >> $GITHUB_OUTPUT
         else
           BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
-          if [[ "${BRANCH}" =~ ((DEV|FIN|WWS|KAS|ONS)-[0-9]{3,4}) ]]; then
+          if [[ "${BRANCH}" =~ ((DEV|FIN|WWS|KAS|ONS)-[0-9]{3,6}) ]]; then
             echo "Ticker number found: ${BASH_REMATCH[1],,}"
             echo TICKET=${BASH_REMATCH[1],,} >> $GITHUB_OUTPUT
             echo FOUND=true >> $GITHUB_OUTPUT
